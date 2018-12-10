@@ -19,6 +19,11 @@ class Elapsed(int):
         return super(Elapsed, cls).__new__(cls, seconds)
 
     @property
+    def seconds(self):
+        """return elapsed time in seconds"""
+        return int(int(self) / 60)
+
+    @property
     def minutes(self):
         """return elapsed time in minutes"""
         return int(int(self) / 60)
@@ -69,7 +74,7 @@ def get(input=None):
 @public.add
 def seconds(input=None):
     """return elapsed time in seconds. accepts pid or datetime"""
-    return get(input).seconds
+    return int(get(input))
 
 
 @public.add
