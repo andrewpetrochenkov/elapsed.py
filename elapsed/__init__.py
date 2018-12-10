@@ -11,27 +11,17 @@ http://pubs.opengroup.org/onlinepubs/9699919799/utilities/ps.html
 
 
 @public.add
-class Elapsed:
+class Elapsed(int):
     __readme__ = ["seconds", "minutes", "hours", "days", "__init__", "__str__"]
-    _seconds = None
 
-    def __init__(self, seconds):
+    def __new__(cls, seconds):
         """init from total seconds count"""
-        self.seconds = int(seconds)
-
-    @property
-    def seconds(self):
-        """return elapsed time in seconds"""
-        return self._seconds
-
-    @seconds.setter
-    def seconds(self,seconds):
-        self._seconds = int(seconds)
+        return super(Elapsed, cls).__new__(cls, seconds)
 
     @property
     def minutes(self):
         """return elapsed time in minutes"""
-        return int(self.seconds / 60)
+        return int(int(self) / 60)
 
     @property
     def hours(self):
@@ -45,7 +35,7 @@ class Elapsed:
 
     def __str__(self):
         """format elapsed time in the form `[[dd-]hh:]mm:ss`"""
-        string = "%02d:%02d" % (self.minutes % 60, self.seconds % 60)
+        string = "%02d:%02d" % (self.minutes % 60, int(self) % 60)
         if self.hours:
             string = "%02d:%s" % (self.hours % 24, string)
         if self.days:

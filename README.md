@@ -1,5 +1,5 @@
-[![](https://img.shields.io/pypi/pyversions/elapsed.svg?longCache=True)](https://pypi.org/pypi/elapsed/)
-[![](https://img.shields.io/pypi/v/elapsed.svg?maxAge=3600)](https://pypi.org/pypi/elapsed/)
+[![](https://img.shields.io/pypi/pyversions/elapsed.svg?longCache=True)](https://pypi.org/project/elapsed/)
+[![](https://img.shields.io/pypi/v/elapsed.svg?maxAge=3600)](https://pypi.org/project/elapsed/)
 [![Travis](https://api.travis-ci.org/looking-for-a-job/elapsed.py.svg?branch=master)](https://travis-ci.org/looking-for-a-job/elapsed.py/)
 
 #### Install
@@ -11,23 +11,20 @@ $ [sudo] pip install elapsed
 +   accepts `datetime` or pid. `os.getcwd()` by default
 
 #### Classes
+`elapsed.Elapsed`
 
-###### `elapsed.Elapsed`
-
-method|description
+method|`__doc__`
 -|-
-`__init__(seconds)`|init from total seconds count
 `__str__()`|format elapsed time in the form `[[dd-]hh:]mm:ss`
 
-@property|description
+@property|`__doc__`
 -|-
 `days`|return elapsed time in days
 `hours`|return elapsed time in hours
 `minutes`|return elapsed time in minutes
-`seconds`|return elapsed time in seconds
 
 #### Functions
-function|description
+function|`__doc__`
 -|-
 `elapsed.days(input=None)`|return elapsed time in days. accepts pid or datetime
 `elapsed.get(input=None)`|return elapsed.Elapsed instance. accepts pid or datetime
@@ -40,7 +37,7 @@ function|description
 ```python
 >>> dt = datetime.datetime.now()
 >>> time.sleep(2)
->>> elapsed.time(dt)
+>>> elapsed.get(dt)
 '00:02'
 ```
 
