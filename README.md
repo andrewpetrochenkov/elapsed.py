@@ -1,8 +1,12 @@
+<!--
+https://pypi.org/project/readme-generator/
+-->
+
 [![](https://img.shields.io/pypi/pyversions/elapsed.svg?longCache=True)](https://pypi.org/project/elapsed/)
 [![](https://img.shields.io/pypi/v/elapsed.svg?maxAge=3600)](https://pypi.org/project/elapsed/)
 [![Travis](https://api.travis-ci.org/looking-for-a-job/elapsed.py.svg?branch=master)](https://travis-ci.org/looking-for-a-job/elapsed.py/)
 
-#### Install
+#### Installation
 ```bash
 $ [sudo] pip install elapsed
 ```
@@ -11,26 +15,18 @@ $ [sudo] pip install elapsed
 +   accepts `datetime` or pid. `os.getcwd()` by default
 
 #### Classes
-`elapsed.Elapsed`
-
-method|`__doc__`
+class|`__doc__`
 -|-
-`__str__()`|format elapsed time in the form `[[dd-]hh:]mm:ss`
-
-@property|`__doc__`
--|-
-`days`|return elapsed time in days
-`hours`|return elapsed time in hours
-`minutes`|return elapsed time in minutes
+`elapsed.Elapsed` |
 
 #### Functions
 function|`__doc__`
 -|-
-`elapsed.days(input=None)`|return elapsed time in days. accepts pid or datetime
-`elapsed.get(input=None)`|return elapsed.Elapsed instance. accepts pid or datetime
-`elapsed.hours(input=None)`|return elapsed time in hours. accepts pid or datetime
-`elapsed.minutes(input=None)`|return elapsed time in minutes. accepts pid or datetime
-`elapsed.seconds(input=None)`|return elapsed time in seconds. accepts pid or datetime
+`elapsed.days(input=None)` |return elapsed time in days. accepts pid or datetime
+`elapsed.get(input=None)` |return elapsed.Elapsed instance. accepts pid or datetime
+`elapsed.hours(input=None)` |return elapsed time in hours. accepts pid or datetime
+`elapsed.minutes(input=None)` |return elapsed time in minutes. accepts pid or datetime
+`elapsed.seconds(input=None)` |return elapsed time in seconds. accepts pid or datetime
 
 #### Examples
 `datetime` elapsed time
@@ -62,4 +58,6 @@ process  elapsed time by pid (`os.getpid()` by default)
 2
 ```
 
-<p align="center"><a href="https://pypi.org/project/readme-md/">readme-md</a> - README.md generator</p>
+<p align="center">
+    <a href="https://pypi.org/project/readme-generator/">readme-generator</a>
+</p>

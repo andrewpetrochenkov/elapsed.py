@@ -21,7 +21,7 @@ class Elapsed(int):
     @property
     def seconds(self):
         """return elapsed time in seconds"""
-        return int(int(self) / 60)
+        return int(self)
 
     @property
     def minutes(self):
