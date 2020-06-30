@@ -1,7 +1,8 @@
-#!/usr/bin/env python
+__all__ = ['Elapsed', 'get', 'seconds', 'minutes', 'hours', 'days', ]
+
+
 import datetime
 import os
-import public
 
 """
 ps -p %s -o etime
@@ -10,7 +11,6 @@ http://pubs.opengroup.org/onlinepubs/9699919799/utilities/ps.html
 """
 
 
-@public.add
 class Elapsed(int):
     __readme__ = ["seconds", "minutes", "hours", "days", "__init__", "__str__"]
 
@@ -59,37 +59,33 @@ def _parse_ps_output(string):
     return seconds
 
 
-@public.add
 def get(input=None):
     """return elapsed.Elapsed instance. accepts pid or datetime"""
     if isinstance(input, datetime.datetime):
         return Elapsed((datetime.datetime.now() - input).total_seconds())
     if not input or isinstance(input, int):
         pid = input if input else os.getpid()
-        output = os.popen("ps -p %s -o etime | grep -v ELAPSED" % pid).read().strip()
+        output = os.popen("ps -p %s -o etime | grep -v ELAPSED" %
+                          pid).read().strip()
         if output:
             return Elapsed(_parse_ps_output(output))
 
 
-@public.add
 def seconds(input=None):
     """return elapsed time in seconds. accepts pid or datetime"""
     return int(get(input))
 
 
-@public.add
 def minutes(input=None):
     """return elapsed time in minutes. accepts pid or datetime"""
     return get(input).minutes
 
 
-@public.add
 def hours(input=None):
     """return elapsed time in hours. accepts pid or datetime"""
     return get(input).hours
 
 
-@public.add
 def days(input=None):
     """return elapsed time in days. accepts pid or datetime"""
     return get(input).days

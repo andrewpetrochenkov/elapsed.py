@@ -1,33 +1,19 @@
 <!--
-https://pypi.org/project/readme-generator/
-https://pypi.org/project/python-readme-generator/
+https://readme42.com
 -->
 
-[![](https://img.shields.io/pypi/pyversions/elapsed.svg?longCache=True)](https://pypi.org/project/elapsed/)
-[![](https://img.shields.io/pypi/v/elapsed.svg?maxAge=3600)](https://pypi.org/project/elapsed/)
-[![Travis](https://api.travis-ci.org/looking-for-a-job/elapsed.py.svg?branch=master)](https://travis-ci.org/looking-for-a-job/elapsed.py/)
 
-#### Installation
+[![](https://img.shields.io/pypi/v/elapsed.svg?maxAge=3600)](https://pypi.org/project/elapsed/)
+[![](https://img.shields.io/badge/License-Unlicense-blue.svg?longCache=True)](https://unlicense.org/)
+[![](https://github.com/andrewp-as-is/elapsed.py/workflows/tests42/badge.svg)](https://github.com/andrewp-as-is/elapsed.py/actions)
+
+### Installation
 ```bash
 $ [sudo] pip install elapsed
 ```
 
 #### Features
 +   accepts `datetime` or pid. `os.getcwd()` by default
-
-#### Classes
-class|`__doc__`
--|-
-`elapsed.Elapsed` |
-
-#### Functions
-function|`__doc__`
--|-
-`elapsed.days(input=None)` |return elapsed time in days. accepts pid or datetime
-`elapsed.get(input=None)` |return elapsed.Elapsed instance. accepts pid or datetime
-`elapsed.hours(input=None)` |return elapsed time in hours. accepts pid or datetime
-`elapsed.minutes(input=None)` |return elapsed time in minutes. accepts pid or datetime
-`elapsed.seconds(input=None)` |return elapsed time in seconds. accepts pid or datetime
 
 #### Examples
 `datetime` elapsed time
@@ -60,5 +46,5 @@ process  elapsed time by pid (`os.getpid()` by default)
 ```
 
 <p align="center">
-    <a href="https://pypi.org/project/python-readme-generator/">python-readme-generator</a>
+    <a href="https://readme42.com/">readme42.com</a>
 </p>
